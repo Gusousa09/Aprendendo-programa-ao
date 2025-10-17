@@ -2,25 +2,27 @@
 // Este repositório contém as práticas de programação que estou praticando no curso, codigo a baixo na linguagem JavaScript
 
 alert('Boas vindas ao jogo do número secreto');
-let numeroSecreto = 5;
-console.log(numeroSecreto);
+let numeroSecreto = parseInt(Math.random() * 100 + 1);
+console.log(numeroSecreto)
 let chute;
 let tentativas = 1;
 
+// enquanto chute não for igual ao n.s.
 while (chute != numeroSecreto) {
-    chute = prompt(" escolha um numero entre 1 a 10");
+    chute = prompt('Escolha um número entre 1 e 100');
+    // se chute for igual ao número secreto
     if (chute == numeroSecreto) {
-        alert(`Isso ai! Você descobriu o número secreto ${numeroSecreto} com ${tentativas} tentativas`);
+        break;
     } else {
         if (chute > numeroSecreto) {
-            alert(`o numero secreto é menor que ${chute}`);
+            alert(`O número secreto é menor que ${chute}`)
         } else {
-            alert(`O numero secreto é maior que ${chute}`);
+            alert(`O número secreto é maior que ${chute}`)
         }
-        //tentativas = tentativas + 1;
-        tentativas++;
+        // tentativas = tentativas + 1
+        tentativas++
     }
-
-
-
 }
+
+let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
+alert(`Isso ai! Você descobriu o número secreto ${numeroSecreto} com ${tentativas} ${palavraTentativa}.`);
